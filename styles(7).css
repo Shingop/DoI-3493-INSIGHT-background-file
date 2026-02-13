@@ -7,15 +7,15 @@
    CSS VARIABLES
    ========================================== */
 :root {
-    --base-color: rgb(100, 3, 15);
-    --hover-color: rgb(100, 46, 44);
-    --click-color: rgb(100, 3, 15);
+    --base-color: rgb(6, 100, 3);
+    --hover-color: rgb(46, 100, 44);
+    --click-color: rgb(3, 100, 6);
     --basalt-primary-color: 0, 15, 0;
-    --basalt-secondary-color: 74, 1, 9;
-    --basalt-tertiary-color: 74, 1, 9;
-    --ec-popup-color: 153, 0, 0;
-    --basalt-bright-element-color: 255, 0, 0;
-    --basalt-dark-element-color: 255, 0, 0;
+    --basalt-secondary-color: 5, 74, 1;
+    --basalt-tertiary-color: 5, 74, 1;
+    --ec-popup-color: 13, 153, 0;
+    --basalt-bright-element-color: 34, 255, 0;
+    --basalt-dark-element-color: 34, 255, 0;
     --rfr-primary: #E0F6FD;
     --rfr-secondary: lightskyblue;
 }
@@ -51,7 +51,7 @@ body {
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #8b0000 #1a1a1a;
+    scrollbar-color: #0c8b00 #1a1a1a;
 }
 
 /* Chrome, Edge, and Safari */
@@ -65,13 +65,13 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #8b0000;
+    background-color: #158b00;
     border-radius: 0px;
     border: 1px solid #000000;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #b30000;
+    background-color: #15b300;
 }
 
 *::-webkit-scrollbar-corner {
@@ -84,7 +84,7 @@ strong {
 }
 
 a {
-    color: #ff0000;
+    color: #2bff00;
     text-decoration: none;
 }
 
@@ -384,8 +384,8 @@ hr {
 }
 
 .tab-button.active {
-    background-color: #8b0000;
-    border-color: #ff0000;
+    background-color: #058b00;
+    border-color: #00ff04;
 }
 
 .tab-content {
@@ -437,7 +437,7 @@ hr {
 }
 
 .classification_memo h2 {
-    color: #ff0000;
+    color: #00ff11;
     margin-bottom: 10px;
 }
 
@@ -578,7 +578,7 @@ hr {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    background: #8b0000;
+    background: #008b00;
     color: #ffffff;
     padding: 14px 40px;
     font-size: 18px;
@@ -592,13 +592,13 @@ hr {
 }
 
 .collapsible-btn:hover {
-    background: #b30000;
+    background: #1bb300;
 }
 
 .collapsible-content {
     display: none;
-    border-top: 2px solid #8b0000;
-    border-bottom: 2px solid #8b0000;
+    border-top: 2px solid #008b07;
+    border-bottom: 2px solid #008b07;
     padding: 16px 0;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -818,7 +818,7 @@ hr {
     justify-items: start;
     margin-left: 2em;
     padding-left: 1em;
-    border-left: 2px solid #8b0000;
+    border-left: 2px solid #0c8b00;
 }
 
 .bottom-left-box > .name-box,
