@@ -11,11 +11,11 @@
     --hover-color: rgb(46, 100, 44);
     --click-color: rgb(3, 100, 6);
     --basalt-primary-color: 0, 15, 0;
-    --basalt-secondary-color: 5, 74, 1;
-    --basalt-tertiary-color: 5, 74, 1;
-    --ec-popup-color: 13, 153, 0;
-    --basalt-bright-element-color: 34, 255, 0;
-    --basalt-dark-element-color: 34, 255, 0;
+    --basalt-secondary-color: 0, 22, 0;
+    --basalt-tertiary-color: 0, 30, 0;
+    --ec-popup-color: 10, 70, 10;
+    --basalt-bright-element-color: 16, 184, 16;
+    --basalt-dark-element-color: 10, 150, 10;
     --rfr-primary: #E0F6FD;
     --rfr-secondary: lightskyblue;
 }
