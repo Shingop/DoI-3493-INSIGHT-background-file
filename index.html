@@ -60,7 +60,7 @@
             <div class="tab-buttons">
                 <button class="tab-button active" data-tab="intro">INTRODUCTION & NOTES</button>
                 <button class="tab-button" data-tab="personnel">SUBJECT BACKGROUND & DATA</button>
-                <button class="tab-button" data-tab="newtab">MILITARY BACKGROUND & DATA</button>
+                <button class="tab-button" data-tab="military">MILITARY BACKGROUND & DATA</button>
             </div>
 
             <!-- Tab Content: Introduction -->
@@ -453,25 +453,45 @@
                     <p>...</p>
                 </div>
             </div>
-        </div>
-<!-- Tab Content: Your New Tab -->
-<div id="newtab-tab" class="tab-content">
-    <div class="loading-text">
-        <p>...</p>
-        <p>Loading document...</p>
-        <p>...</p>
-    </div>
+            <!-- End of personnel-tab -->
 
-    <div class="ec">
-        <div class="ec-title">YOUR NEW TAB TITLE</div>
-        
-        <p>Your content goes here...</p>
-        
-        <!-- You can add whatever content you want -->
+            <!-- Tab Content: Military Background -->
+            <div id="military-tab" class="tab-content">
+                <div class="loading-text">
+                    <p>...</p>
+                    <p>Loading document...</p>
+                    <p>...</p>
+                </div>
+
+                <div class="ec">
+                    <div class="ec-title">MILITARY BACKGROUND & DATA</div>
+                    
+                    <p>Your military content goes here...</p>
+                    
+                    <p>Add service records, deployments, training history, commendations, etc.</p>
+                </div>
+
+                <div class="loading-text" style="margin-top: 40px;">
+                    <p>...</p>
+                    <p>End of file.</p>
+                    <p>No further documents found.</p>
+                    <p>...</p>
+                </div>
+            </div>
+            <!-- End of military-tab -->
+
+        </div>
+        <!-- Close tab-container -->
+
+        <!-- Back to Top Button -->
+        <div class="ec-theme-button">
+            <div class="ec-button-inner-wrapper">
+                <a href="#" id="back-to-top">-- Back to Top --</a>
+            </div>
+        </div>
+
     </div>
-</div>
-<!-- Tab Content: Your New Tab -->
-    </div>
+    <!-- Close main-content -->
 
     <script src="script.js"></script>
 </body>
