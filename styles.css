@@ -431,9 +431,9 @@ hr {
     min-height: 4rem;
     margin: 2rem auto;
     padding: 20px;
-    border: solid 4px rgba(153, 0, 0);
+    border: solid 4px rgba(7, 70, 11);
     text-align: center;
-    background-color: rgba(74, 1, 9, 0.7);
+    background-color: rgba(0, 19, 0);
 }
 
 .classification_memo h2 {
