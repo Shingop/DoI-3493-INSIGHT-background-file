@@ -390,6 +390,27 @@ hr {
 
 .tab-content {
     display: none;
+    position: relative;
+    min-height: 400px;
+}
+
+/* Dark gradient overlay at the top of each tab */
+.tab-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: -20px;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure all content appears above the gradient */
+.tab-content > * {
+    position: relative;
+    z-index: 2;
 }
 
 .tab-content.active {
@@ -688,7 +709,7 @@ hr {
     font-weight: 700;
     margin-bottom: 0px;
     margin-top: 5px;
-    padding-right: 1px;
+    padding-right: 5px;
 }
 
 .top-left-box > .from-box {
@@ -718,7 +739,7 @@ hr {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-items: start;
     align-items: center;
-    margin-left: 1px;
+    margin-left: 5px;
     margin-bottom: 0px;
 }
 
@@ -731,7 +752,7 @@ hr {
     margin-top: 5px;
     margin-bottom: 0px;
     text-wrap: balance;
-    padding-left: 1px;
+    padding-left: 5px;
 }
 
 .top-middle-box > .from-name-box,
@@ -759,20 +780,20 @@ hr {
 .header-box > .top-right-box {
     width: 100%;
     grid-area: top-right-box;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url("https://scp-wiki.wdfiles.com/local--files/theme%3Abasalt/basalt_scp_logo-for_darkmode.svg");
     background-size: 75px 75px;
-    background-position: right center;
+    background-position: center center;
     background-repeat: no-repeat;
-    margin-top: 1em;
-    margin-right: 1em;
-    margin-left: -1em;
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 800px) {
     .header-box > .top-right-box {
         min-width: 75px;
-        margin-left: -3em;
     }
     .header-box > .top-left-box {
         padding-left: 1em;
@@ -875,11 +896,11 @@ hr {
 
 /* Hide CC Box if 'none' */
 .cc-text-box.cc-none {
-    display: none !important;
+    display: none;
 }
 
 .cc-box.cc-none {
-    display: none !important;
+    display: none;
 }
 
 /* When CC is hidden, adjust the grid to 3 rows instead of 4 */
@@ -897,23 +918,6 @@ hr {
         "to-name-box"
         "subject-text-box";
     grid-template-rows: 1fr 1fr 1fr;
-}
-
-/* Make text touch in the middle for cc-none */
-.top-left-box.cc-none > div {
-    padding-right: 1px;
-    margin-right: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.top-middle-box.cc-none > div {
-    padding-left: 1px;
-    margin-left: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 /* Hide Title if 'none' */
