@@ -1193,83 +1193,45 @@ hr {
 
 /* FAMILY TREE CODE */
 .tree {
-    position: relative;
-    width: 900px;
-    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
-/* PERSON CARD (UNCHANGED LOOK) */
+/* Row layout */
+.row {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+/* Person box */
 .person {
-    position: absolute;
-    width: 160px;
-    height: 220px;
-    background: #2f7f7f;
+    background: #2e2e2e; /* dark grey */
+    color: white; /* white text */
+    padding: 15px 25px;
     border-radius: 10px;
+    border: 2px solid #555;
     text-align: center;
-    color: white;
-    padding-top: 20px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-/* Top Row Positions */
-.francis { top: 0; left: 50px; }
-.maryam  { top: 0; left: 350px; }
-.cameron { top: 0; left: 650px; }
+.person strong {
+    display: block;
+    font-size: 1.1em;
+}
 
-/* Children Positions */
-.hayden  { top: 400px; left: 250px; }
-.cassium { top: 400px; left: 550px; }
+.title {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
 
-/* Lines */
+/* Vertical line */
 .line {
-    position: absolute;
-    background: #333;
-}
-
-/* Francis → Maryam */
-.line-fm {
-    top: 110px;
-    left: 210px;
-    width: 140px;
-    height: 2px;
-}
-
-/* Maryam → Cameron */
-.line-mc {
-    top: 110px;
-    left: 510px;
-    width: 140px;
-    height: 2px;
-}
-
-/* Down from Maryam/Cameron */
-.line-down {
-    top: 110px;
-    left: 500px;
     width: 2px;
-    height: 200px;
-}
-
-/* Horizontal to children */
-.line-children {
-    top: 310px;
-    left: 330px;
-    width: 340px;
-    height: 2px;
-}
-
-/* Down to Hayden */
-.line-hayden {
-    top: 310px;
-    left: 330px;
-    width: 2px;
-    height: 90px;
-}
-
-/* Down to Cassium */
-.line-cassium {
-    top: 310px;
-    left: 670px;
-    width: 2px;
-    height: 90px;
+    height: 60px;
+    background: white;
 }
 
