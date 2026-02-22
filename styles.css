@@ -1196,54 +1196,41 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    gap: 50px;
 }
 
-/* Person Box */
+/* Row layout */
+.row {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+/* Person box */
 .person {
-    border: 2px solid #333;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: white;
+    background: #2e2e2e; /* dark grey */
+    color: white; /* white text */
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid #555;
     text-align: center;
-    min-width: 180px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.person strong {
+    display: block;
+    font-size: 1.1em;
 }
 
 .title {
     font-size: 0.9em;
-    color: #666;
+    opacity: 0.8;
 }
 
-/* Couples Row */
-.couple {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    position: relative;
-    margin-bottom: 40px;
-}
-
-/* Children Row */
-.children {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 40px;
-}
-
-/* Lines */
-.line-down {
+/* Vertical line */
+.line {
     width: 2px;
-    height: 40px;
-    background: #333;
-    margin: 0 auto;
-}
-
-.line-horizontal {
-    height: 2px;
-    background: #333;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    right: 25%;
+    height: 60px;
+    background: white;
 }
