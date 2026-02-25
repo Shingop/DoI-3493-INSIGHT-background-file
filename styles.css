@@ -1191,7 +1191,10 @@ hr {
     }
 }
 
-/* FAMILY TREE CODE */
+/* ==========================================
+   EXPANDABLE FAMILY TREE CODE
+   ========================================== */
+
 .tree {
     display: flex;
     flex-direction: column;
@@ -1204,28 +1207,87 @@ hr {
     display: flex;
     gap: 80px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Person box */
 .person {
-    background: #2e2e2e; /* dark grey */
-    color: white; /* white text */
+    background: #2e2e2e;
+    color: white;
     padding: 15px 25px;
     border-radius: 10px;
     border: 2px solid #555;
     text-align: center;
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.person:hover {
+    border-color: #0c8b00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(12, 139, 0, 0.4);
+}
+
+.person.expanded {
+    border-color: #00ff04;
+    background: #1a3a1a;
 }
 
 .person strong {
     display: block;
     font-size: 1.1em;
+    margin-bottom: 5px;
 }
 
 .title {
     font-size: 0.9em;
     opacity: 0.8;
+}
+
+/* Expanded details section */
+.person-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 10px;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    text-align: left;
+}
+
+.person.expanded .person-details {
+    max-height: 500px;
+    padding-top: 10px;
+    border-top: 1px solid #0c8b00;
+}
+
+.person-details p {
+    margin: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.person-details strong {
+    color: #00ff04;
+    font-size: 0.9em;
+}
+
+/* Expand indicator */
+.person::after {
+    content: "▼";
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 0.7em;
+    opacity: 0.5;
+    transition: transform 0.3s ease;
+}
+
+.person.expanded::after {
+    transform: rotate(180deg);
 }
 
 /* Vertical line */
@@ -1235,3 +1297,14 @@ hr {
     background: white;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        gap: 40px;
+    }
+    
+    .person {
+        min-width: 150px;
+        padding: 12px 20px;
+    }
+}
