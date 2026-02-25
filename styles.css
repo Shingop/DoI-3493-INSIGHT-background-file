@@ -1192,7 +1192,7 @@ hr {
 }
 
 /* ==========================================
-   EXPANDABLE FAMILY TREE CODE
+   EXPANDABLE FAMILY TREE CODE - SQUARE LAYOUT
    ========================================== */
 
 .tree {
@@ -1210,7 +1210,7 @@ hr {
     flex-wrap: wrap;
 }
 
-/* Person box */
+/* Person box - SQUARE LAYOUT */
 .person {
     background: #2e2e2e;
     color: white;
@@ -1218,11 +1218,14 @@ hr {
     border-radius: 10px;
     border: 2px solid #555;
     text-align: center;
+    width: 200px;  /* Fixed width */
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .person:hover {
@@ -1234,6 +1237,7 @@ hr {
 .person.expanded {
     border-color: #00ff04;
     background: #1a3a1a;
+    width: 200px;  /* Keep same width when expanded */
 }
 
 .person strong {
@@ -1245,42 +1249,46 @@ hr {
 .title {
     font-size: 0.9em;
     opacity: 0.8;
+    margin-bottom: 10px;
 }
 
 /* Expanded details section */
 .person-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
     margin-top: 10px;
     padding-top: 0;
     border-top: 1px solid transparent;
     text-align: left;
+    font-size: 0.85em;
 }
 
 .person.expanded .person-details {
-    max-height: 500px;
+    max-height: 600px;
     padding-top: 10px;
     border-top: 1px solid #0c8b00;
 }
 
 .person-details p {
-    margin: 8px 0;
+    margin: 6px 0;
     font-size: 0.9em;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .person-details strong {
     color: #00ff04;
     font-size: 0.9em;
+    display: inline;
+    margin-bottom: 0;
 }
 
 /* Expand indicator */
 .person::after {
     content: "▼";
     position: absolute;
-    bottom: 5px;
-    right: 10px;
+    bottom: 8px;
+    right: 12px;
     font-size: 0.7em;
     opacity: 0.5;
     transition: transform 0.3s ease;
@@ -1288,6 +1296,8 @@ hr {
 
 .person.expanded::after {
     transform: rotate(180deg);
+    bottom: auto;
+    top: 8px;
 }
 
 /* Vertical line */
@@ -1304,7 +1314,27 @@ hr {
     }
     
     .person {
-        min-width: 150px;
+        width: 180px;
+        min-width: 180px;
         padding: 12px 20px;
+    }
+    
+    .person.expanded {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .person {
+        width: 150px;
+        min-width: 150px;
+    }
+    
+    .person.expanded {
+        width: 150px;
+    }
+    
+    .person-details {
+        font-size: 0.75em;
     }
 }
