@@ -162,41 +162,90 @@ h2 {text-align: center;}
                     <h2>FAMILY STRUCTURE</h2>
                     <br>
 <div class="tree">
-
     <!-- Top Row -->
     <div class="row">
-        <div class="person">
+        <div class="person" onclick="togglePerson(this)">
             <strong>Francis Terris</strong>
             <div class="title">Step-Father</div>
+            <div class="person-details">
+                <p><strong>Relationship:</strong> Step-father to Hayden</p>
+                <p><strong>Status:</strong> Married to Maryam Ayub</p>
+                <p><strong>Background:</strong> Became Hayden's step-father after marrying Maryam. Provided stability during Hayden's formative years.</p>
+                <p><strong>Current Status:</strong> Active</p>
+            </div>
         </div>
-
-        <div class="person">
+        
+        <div class="person" onclick="togglePerson(this)">
             <strong>Maryam Ayub</strong>
             <div class="title">Mother</div>
+            <div class="person-details">
+                <p><strong>Birth Name:</strong> Maryam Grant (formerly)</p>
+                <p><strong>Children:</strong> Hayden Grant, Cassium Grant</p>
+                <p><strong>Marriages:</strong> Cameron Grant (divorced), Francis Terris (current)</p>
+                <p><strong>Background:</strong> Mother of two sons. Remarried after divorcing Cameron Grant.</p>
+                <p><strong>Current Status:</strong> Active</p>
+            </div>
         </div>
-
-        <div class="person">
+        
+        <div class="person" onclick="togglePerson(this)">
             <strong>Cameron Grant</strong>
             <div class="title">Father</div>
+            <div class="person-details">
+                <p><strong>Relationship:</strong> Biological father</p>
+                <p><strong>Children:</strong> Hayden Grant, Cassium Grant</p>
+                <p><strong>Status:</strong> Divorced from Maryam</p>
+                <p><strong>Background:</strong> Father of Hayden and Cassium. Separated from Maryam, leading to her remarriage to Francis Terris.</p>
+                <p><strong>Current Status:</strong> Active</p>
+            </div>
         </div>
     </div>
-
+    
     <div class="line"></div>
-
+    
     <!-- Children Row -->
     <div class="row">
-        <div class="person">
+        <div class="person" onclick="togglePerson(this)">
             <strong>Hayden Grant</strong>
             <div class="title">Son of Maryam & Cameron</div>
+            <div class="person-details">
+                <p><strong>Full Name:</strong> Hayden Marcus Grant</p>
+                <p><strong>Date of Birth:</strong> 18/07/1976</p>
+                <p><strong>Parents:</strong> Maryam Ayub (Mother), Cameron Grant (Father)</p>
+                <p><strong>Step-Parent:</strong> Francis Terris</p>
+                <p><strong>Sibling:</strong> Cassium Grant (Brother)</p>
+                <p><strong>Current Role:</strong> Foundation Investigator, Site 72</p>
+            </div>
         </div>
-
-        <div class="person">
+        
+        <div class="person" onclick="togglePerson(this)">
             <strong>Cassium Ayub</strong>
             <div class="title">Son of Maryam & Cameron</div>
+            <div class="person-details">
+                <p><strong>Full Name:</strong> Cassium Grant</p>
+                <p><strong>Parents:</strong> Maryam Ayub (Mother), Cameron Grant (Father)</p>
+                <p><strong>Step-Parent:</strong> Francis Terris</p>
+                <p><strong>Sibling:</strong> Hayden Grant (Brother)</p>
+                <p><strong>Relationship:</strong> Brother to Hayden</p>
+                <p><strong>Current Status:</strong> [Add details here]</p>
+            </div>
         </div>
     </div>
-
 </div>
+
+<script>
+function togglePerson(element) {
+    // Close all other persons
+    const allPersons = document.querySelectorAll('.person.expanded');
+    allPersons.forEach(person => {
+        if (person !== element) {
+            person.classList.remove('expanded');
+        }
+    });
+    
+    // Toggle the clicked person
+    element.classList.toggle('expanded');
+}
+</script>
                     <br>
                     <hr>
 
