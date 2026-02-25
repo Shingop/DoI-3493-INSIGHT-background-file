@@ -161,10 +161,32 @@ h2 {text-align: center;}
 
                     <h2>FAMILY STRUCTURE</h2>
                     <br>
+<!-- EXCLUSIVE TOGGLE VERSION - Only one box open at a time -->
+
+<script>
+function togglePersonExclusive(element) {
+    // Check if this element is already expanded
+    const isExpanded = element.classList.contains('expanded');
+    
+    // Close all expanded persons
+    const allPersons = document.querySelectorAll('.person.expanded');
+    allPersons.forEach(person => {
+        person.classList.remove('expanded');
+    });
+    
+    // If it wasn't expanded before, expand it now
+    if (!isExpanded) {
+        element.classList.add('expanded');
+    }
+}
+</script>
+
+<!-- FULL HTML WITH EXCLUSIVE TOGGLE: -->
+
 <div class="tree">
     <!-- Top Row -->
     <div class="row">
-        <div class="person" onclick="togglePerson(this)">
+        <div class="person" onclick="togglePersonExclusive(this)">
             <strong>Francis Terris</strong>
             <div class="title">Step-Father</div>
             <div class="person-details">
@@ -175,7 +197,7 @@ h2 {text-align: center;}
             </div>
         </div>
         
-        <div class="person" onclick="togglePerson(this)">
+        <div class="person" onclick="togglePersonExclusive(this)">
             <strong>Maryam Ayub</strong>
             <div class="title">Mother</div>
             <div class="person-details">
@@ -187,7 +209,7 @@ h2 {text-align: center;}
             </div>
         </div>
         
-        <div class="person" onclick="togglePerson(this)">
+        <div class="person" onclick="togglePersonExclusive(this)">
             <strong>Cameron Grant</strong>
             <div class="title">Father</div>
             <div class="person-details">
@@ -204,7 +226,7 @@ h2 {text-align: center;}
     
     <!-- Children Row -->
     <div class="row">
-        <div class="person" onclick="togglePerson(this)">
+        <div class="person" onclick="togglePersonExclusive(this)">
             <strong>Hayden Grant</strong>
             <div class="title">Son of Maryam & Cameron</div>
             <div class="person-details">
@@ -217,7 +239,7 @@ h2 {text-align: center;}
             </div>
         </div>
         
-        <div class="person" onclick="togglePerson(this)">
+        <div class="person" onclick="togglePersonExclusive(this)">
             <strong>Cassium Ayub</strong>
             <div class="title">Son of Maryam & Cameron</div>
             <div class="person-details">
@@ -231,21 +253,6 @@ h2 {text-align: center;}
         </div>
     </div>
 </div>
-
-<script>
-function togglePerson(element) {
-    // Close all other persons
-    const allPersons = document.querySelectorAll('.person.expanded');
-    allPersons.forEach(person => {
-        if (person !== element) {
-            person.classList.remove('expanded');
-        }
-    });
-    
-    // Toggle the clicked person
-    element.classList.toggle('expanded');
-}
-</script>
                     <br>
                     <hr>
 
