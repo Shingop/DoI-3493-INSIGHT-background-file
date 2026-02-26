@@ -13,13 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Tab switching functionality with scroll-to-top
+// Tab switching functionality with IMMEDIATE scroll-to-top
 document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
+            // SCROLL TO TOP FIRST - Do this immediately before anything else
+            window.scrollTo(0, 0);
+            
             const targetTab = this.getAttribute('data-tab');
 
             // Remove active class from all buttons and contents
@@ -33,11 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetContent.classList.add('active');
             }
 
-            // SCROLL TO TOP when switching tabs
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Scroll to top again after a tiny delay to ensure it works
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 10);
         });
     });
 });
